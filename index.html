@@ -137,6 +137,9 @@ html:has(#mnav.open) .fab{opacity:0;pointer-events:none}
 .giant .track span{font-family:var(--f-disp);font-weight:900;font-style:italic;font-size:clamp(60px,11vw,170px);color:transparent;-webkit-text-stroke:1.5px var(--ink);line-height:1}
 .giant .track span.f{color:var(--red);-webkit-text-stroke:0}
 
+/* Proceso: sticky (sin pin de GSAP) */
+@media (min-width:821px){.proc{overflow:clip;height:calc(100vh + 1400px);padding-block:0}
+.proc>.wrap{position:sticky;top:0;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;padding-bottom:40px}}
 /* Proceso (pin) */
 .proc{background:var(--bg2)}
 .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:44px;position:relative}
@@ -775,6 +778,12 @@ document.getElementById('lead').addEventListener('submit',e=>{
  cards.forEach((c,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Trabajo '+(i+1));b.onclick=()=>w.scrollTo({left:c.offsetLeft-w.offsetLeft-parseFloat(getComputedStyle(w).paddingLeft),behavior:'smooth'});d.append(b)});
  const upd=()=>{const x=w.scrollLeft,max=w.scrollWidth-w.clientWidth;const i=max>0?Math.round(x/max*(cards.length-1)):0;[...d.children].forEach((b,j)=>b.classList.toggle('on',j===i))};
  w.addEventListener('scroll',upd,{passive:true});upd();})();
+// Proceso: avanza paso a paso con el scroll
+(()=>{const sec=document.querySelector('.proc'),line=document.getElementById('pline'),steps=[...document.querySelectorAll('.step')];if(!sec)return;
+ const mq=matchMedia('(min-width:821px)');
+ const upd=()=>{if(mq.matches){const r=sec.getBoundingClientRect(),tot=sec.offsetHeight-innerHeight;const pr=Math.min(1,Math.max(0,-r.top/tot));line.style.setProperty('--p',pr);steps.forEach((st,i)=>st.classList.toggle('lit',pr>=i/4+.02))}
+  else{line.style.setProperty('--p',1);steps.forEach(st=>{if(st.getBoundingClientRect().top<innerHeight*.8)st.classList.add('lit')})}};
+ addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();})();
 // Header
 const hdr=document.getElementById('hdr');
 addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>20),{passive:true});
@@ -867,12 +876,6 @@ if(FINE&&!RM){
 if(window.gsap&&window.ScrollTrigger){
  gsap.registerPlugin(ScrollTrigger);
  const counters=()=>document.querySelectorAll('.cnt').forEach(el=>{const to=+el.dataset.to;ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:()=>gsap.to({v:0},{v:to,duration:RM?0:1.6,ease:'power2.out',onUpdate(){el.textContent=Math.round(this.targets()[0].v)}})})});
-  // Proceso: pin con línea que se llena
-  const steps=[...document.querySelectorAll('.step')];
-  ScrollTrigger.matchMedia({
-   '(min-width:821px)':()=>{ScrollTrigger.create({trigger:'.proc',start:'top top',end:'+=1600',pin:true,scrub:true,onUpdate:s=>{document.getElementById('pline').style.setProperty('--p',s.progress);steps.forEach((st,i)=>st.classList.toggle('lit',s.progress>=i/4+.02))}})},
-   '(max-width:820px)':()=>{steps.forEach(st=>ScrollTrigger.create({trigger:st,start:'top 75%',onEnter:()=>st.classList.add('lit')}))}
-  });
  if(RM){counters();}
  else{
   // Hero: letras que suben (desde estado visible a los 1.4s; el texto ya es legible)
@@ -916,7 +919,7 @@ if(window.gsap&&window.ScrollTrigger){
   gsap.from('.faq details',{x:-30,opacity:.3,duration:.7,stagger:.07,ease:'power3.out',scrollTrigger:{trigger:'.faq',start:'top 88%'}});
   // Footer
   gsap.from('.foot>div',{y:30,opacity:.3,duration:.8,stagger:.1,scrollTrigger:{trigger:'footer',start:'top 92%'}});
-  const rf=()=>ScrollTrigger.refresh();addEventListener('load',rf);document.fonts&&document.fonts.ready.then(rf);document.querySelectorAll('img,video').forEach(m=>m.addEventListener(m.tagName==='IMG'?'load':'loadedmetadata',rf,{once:true}));setTimeout(rf,2500);
+  const rf=()=>ScrollTrigger.refresh();addEventListener('load',rf);document.fonts&&document.fonts.ready.then(rf);document.querySelectorAll('img,video').forEach(m=>m.addEventListener(m.tagName==='IMG'?'load':'loadedmetadata',rf,{once:true}));setTimeout(rf,2500);let rh=document.body.scrollHeight,rt;new ResizeObserver(()=>{const h=document.body.scrollHeight;if(Math.abs(h-rh)>40){rh=h;clearTimeout(rt);rt=setTimeout(rf,200)}}).observe(document.body);
   counters();
   ScrollTrigger.create({trigger:'body',start:'75% bottom',once:true,onEnter:()=>track('scroll_75')});
  }
