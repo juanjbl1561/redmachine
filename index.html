@@ -190,7 +190,7 @@ html:has(#mnav.open) .fab{opacity:0;pointer-events:none}
 .founder b{font-size:16px}
 .founder span{color:var(--red);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em}
 .founder small{display:none}
-@media (max-width:820px){.founders{grid-template-columns:1fr 1fr 1fr;gap:10px}.founder{padding:6px 6px 14px}.founder .ph{border-radius:12px}.founder b{font-size:14px}.founder span{font-size:10px}}
+@media (max-width:820px){.founders{grid-template-columns:1fr;gap:10px;max-width:none}.founder{flex-direction:row;text-align:left;align-items:center;gap:14px;padding:10px 14px 10px 10px}.founder .ph{flex:0 0 92px;width:92px;border-radius:14px}.founder b{font-size:16px}.founder span{font-size:11px}}
 .team-cards{margin-top:22px}
 
 
@@ -309,7 +309,11 @@ input:focus,select:focus{border-color:var(--red);outline:none}
 @media (max-width:820px){.final-grid{grid-template-columns:1fr}}
 
 /* Footer */
-footer{padding-block:56px 40px;border-top:1px solid var(--line)}
+footer{padding-block:56px 40px;background:#0a0a0c;color:#f2f2f4;border-top:3px solid var(--red)}
+footer .foot h4{color:#8a8a94}
+footer p{color:#a8a8b2!important}footer .foot a,footer .foot div:not(:first-child) p{color:#e6e6ea!important}
+footer .foot a:hover{color:var(--red)}
+footer .foot-b{color:#8a8a94;border-top:1px solid #222;padding-top:20px}
 .foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
 .foot h4{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;color:var(--ink2);margin:0 0 12px;font-weight:500}
 .foot a,.foot p{display:block;text-decoration:none;font-size:15px;margin-bottom:6px}
@@ -362,11 +366,11 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
 }
 </style>
 
-<meta property="og:image" content="/assets/og-red-machine.jpg">
+<meta property="og:image" content="/og-red-machine.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
 <meta name="theme-color" content="#050507">
 <style>[hidden]{display:none!important}img{max-width:100%}body{margin:0}</style>
 </head>
@@ -427,7 +431,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
     <p class="micro">Llamada de 30 min · Revisamos tus redes y anuncios · Sin compromiso</p>
    </div>
     <div class="reel-wrap"><div class="reel" id="reel" data-cur="play">
-      <video class="vid auto" src="/assets/showreel.mp4" poster="/assets/showreel.jpg" muted loop playsinline preload="metadata" aria-label="Showreel de Red Machine"></video>
+      <video class="vid auto" src="/showreel.mp4" poster="/showreel.jpg" muted loop playsinline preload="metadata" aria-label="Showreel de Red Machine"></video>
     </div></div>
   </div>
 </section>
@@ -453,13 +457,13 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
     <p class="eyebrow">Servicios</p>
     <h2 style="margin-top:18px">Todo lo que tu<br>marca necesita</h2>
     <div class="svc-list">
-      <article class="svc tilt"><div class="vis"><img class="vid" src="/assets/svc-produccion-audiovisual.webp" alt="Rodaje en set de Red Machine con cámara de cine" loading="lazy"><span class="lbl">FILM · REC ●</span></div><div class="txt"><span class="k">01 · FILM</span><h3>Producción audiovisual</h3><p>Filmamos en tu local, tu obra o tu producto con calidad de cine. Tu marca se ve como una marca grande.</p><ul><li>Rodaje</li><li>Edición</li><li>Color</li><li>Sonido</li></ul></div></article>
-      <article class="svc tilt"><div class="vis"><img class="vid" src="/assets/svc-videos-ia.webp" alt="Edición de comercial con IA en Red Machine Studio" loading="lazy"><span class="lbl">AI LAB</span></div><div class="txt"><span class="k">02 · AI</span><h3>Videos con IA</h3><p>Escenas, productos y comerciales que antes costaban un rodaje completo. Más piezas, en menos tiempo, por menos plata.</p><ul><li>Comerciales IA</li><li>Avatares</li><li>Escenarios</li></ul></div></article>
-      <article class="svc tilt"><div class="vis"><img class="vid" src="/assets/svc-gestion-redes.webp" alt="Calendario de contenido y gestión de redes" loading="lazy"><span class="lbl">SOCIAL</span></div><div class="txt"><span class="k">03 · SOCIAL</span><h3>Gestión de redes</h3><p>Facebook, Instagram y TikTok con un calendario claro y contenido que tu cliente quiere ver.</p><ul><li>Planning mensual</li><li>Piezas gráficas</li><li>Reels</li></ul></div></article>
-      <article class="svc tilt"><div class="vis"><img class="vid" src="/assets/svc-meta-ads.webp" alt="Panel de campañas de Meta Ads" loading="lazy"><span class="lbl">META ADS</span></div><div class="txt"><span class="k">04 · ADS</span><h3>Meta Ads</h3><p>Campañas pensadas para vender, no para juntar likes. Llevamos a tu cliente ideal hasta la compra y optimizamos cada semana.</p><ul><li>Segmentación</li><li>Retargeting</li><li>Reportes</li></ul></div></article>
-      <article class="svc tilt"><div class="vis"><img class="vid" src="/assets/svc-landing-pages.webp" alt="Diseño de landing page en escritorio y móvil" loading="lazy"><span class="lbl">WEB</span></div><div class="txt"><span class="k">05 · WEB</span><h3>Landing pages y sitios</h3><p>Páginas rápidas, hechas para convertir visitas en clientes. Incluidas en Performance y Signature.</p><ul><li>Landing</li><li>Sitio web</li><li>Medición</li></ul></div></article>
-      <article class="svc tilt"><div class="vis"><img class="vid" src="/assets/svc-direccion-creativa.webp" alt="Equipo de dirección creativa frente a la pizarra de campaña" loading="lazy"><span class="lbl">STRATEGY</span></div><div class="txt"><span class="k">06 · STRATEGY</span><h3>Dirección creativa</h3><p>Lanzamientos y campañas con una idea fuerte detrás, de principio a fin.</p><ul><li>Concepto</li><li>Lanzamientos</li><li>Campañas</li></ul></div></article>
-      <article class="svc tilt"><div class="vis"><img class="vid" src="/assets/svc-ecommerce.webp" alt="Tienda Shopify diseñada por Red Machine en escritorio y móvil" loading="lazy"><span class="lbl">SHOP</span></div><div class="txt"><span class="k">07 · E-COMMERCE</span><h3>Tiendas Shopify</h3><p>Tu tienda online lista para vender: diseño, productos, pagos y conexión con tus campañas para que el anuncio termine en compra.</p><ul><li>Shopify</li><li>Catálogo</li><li>Checkout</li></ul></div></article>
+      <article class="svc tilt"><div class="vis"><img class="vid" src="/svc-produccion-audiovisual.webp" alt="Rodaje en set de Red Machine con cámara de cine" loading="lazy"><span class="lbl">FILM · REC ●</span></div><div class="txt"><span class="k">01 · FILM</span><h3>Producción audiovisual</h3><p>Filmamos en tu local, tu obra o tu producto con calidad de cine. Tu marca se ve como una marca grande.</p><ul><li>Rodaje</li><li>Edición</li><li>Color</li><li>Sonido</li></ul></div></article>
+      <article class="svc tilt"><div class="vis"><img class="vid" src="/svc-videos-ia.webp" alt="Edición de comercial con IA en Red Machine Studio" loading="lazy"><span class="lbl">AI LAB</span></div><div class="txt"><span class="k">02 · AI</span><h3>Videos con IA</h3><p>Escenas, productos y comerciales que antes costaban un rodaje completo. Más piezas, en menos tiempo, por menos plata.</p><ul><li>Comerciales IA</li><li>Avatares</li><li>Escenarios</li></ul></div></article>
+      <article class="svc tilt"><div class="vis"><img class="vid" src="/svc-gestion-redes.webp" alt="Calendario de contenido y gestión de redes" loading="lazy"><span class="lbl">SOCIAL</span></div><div class="txt"><span class="k">03 · SOCIAL</span><h3>Gestión de redes</h3><p>Facebook, Instagram y TikTok con un calendario claro y contenido que tu cliente quiere ver.</p><ul><li>Planning mensual</li><li>Piezas gráficas</li><li>Reels</li></ul></div></article>
+      <article class="svc tilt"><div class="vis"><img class="vid" src="/svc-meta-ads.webp" alt="Panel de campañas de Meta Ads" loading="lazy"><span class="lbl">META ADS</span></div><div class="txt"><span class="k">04 · ADS</span><h3>Meta Ads</h3><p>Campañas pensadas para vender, no para juntar likes. Llevamos a tu cliente ideal hasta la compra y optimizamos cada semana.</p><ul><li>Segmentación</li><li>Retargeting</li><li>Reportes</li></ul></div></article>
+      <article class="svc tilt"><div class="vis"><img class="vid" src="/svc-landing-pages.webp" alt="Diseño de landing page en escritorio y móvil" loading="lazy"><span class="lbl">WEB</span></div><div class="txt"><span class="k">05 · WEB</span><h3>Landing pages y sitios</h3><p>Páginas rápidas, hechas para convertir visitas en clientes. Incluidas en Performance y Signature.</p><ul><li>Landing</li><li>Sitio web</li><li>Medición</li></ul></div></article>
+      <article class="svc tilt"><div class="vis"><img class="vid" src="/svc-direccion-creativa.webp" alt="Equipo de dirección creativa frente a la pizarra de campaña" loading="lazy"><span class="lbl">STRATEGY</span></div><div class="txt"><span class="k">06 · STRATEGY</span><h3>Dirección creativa</h3><p>Lanzamientos y campañas con una idea fuerte detrás, de principio a fin.</p><ul><li>Concepto</li><li>Lanzamientos</li><li>Campañas</li></ul></div></article>
+      <article class="svc tilt"><div class="vis"><img class="vid" src="/svc-ecommerce.webp" alt="Tienda Shopify diseñada por Red Machine en escritorio y móvil" loading="lazy"><span class="lbl">SHOP</span></div><div class="txt"><span class="k">07 · E-COMMERCE</span><h3>Tiendas Shopify</h3><p>Tu tienda online lista para vender: diseño, productos, pagos y conexión con tus campañas para que el anuncio termine en compra.</p><ul><li>Shopify</li><li>Catálogo</li><li>Checkout</li></ul></div></article>
     </div>
   </div>
 </section>
@@ -488,9 +492,9 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
     <h2 style="margin-top:18px">Mirá lo que<br>la máquina crea</h2>
     <p class="lead" style="margin-top:20px">Reels de creación propia, producidos por nuestro equipo con cámara, edición e IA. Esto es lo que tu marca puede tener.</p>
     <div class="works">
-      <article class="work" data-cur="play"><div class="vis"><video class="vid hov" src="/assets/lab-vino-icono.mp4" poster="/assets/lab-vino-icono.jpg" muted loop playsinline preload="none"></video><span class="play">▶ PLAY</span></div><div class="meta"><h3>Vino premium · Edición de lujo</h3><p>Comercial de producto con IA · 21 s</p></div></article>
-      <article class="work" data-cur="play"><div class="vis"><video class="vid hov" src="/assets/lab-four-loko.mp4" poster="/assets/lab-four-loko.jpg" muted loop playsinline preload="none"></video><span class="play">▶ PLAY</span></div><div class="meta"><h3>Bebida energética · Sabores</h3><p>Motion de producto con IA · 20 s</p></div></article>
-      <article class="work" data-cur="play"><div class="vis"><video class="vid hov" src="/assets/lab-dos-cepas.mp4" poster="/assets/lab-dos-cepas.jpg" muted loop playsinline preload="none"></video><span class="play">▶ PLAY</span></div><div class="meta"><h3>Vino blanco · Lanzamiento</h3><p>Comercial de producto con IA · 16 s</p></div></article>
+      <article class="work" data-cur="play"><div class="vis"><video class="vid hov" src="/lab-vino-icono.mp4" poster="/lab-vino-icono.jpg" muted loop playsinline preload="none"></video><span class="play">▶ PLAY</span></div><div class="meta"><h3>Vino premium · Edición de lujo</h3><p>Comercial de producto con IA · 21 s</p></div></article>
+      <article class="work" data-cur="play"><div class="vis"><video class="vid hov" src="/lab-four-loko.mp4" poster="/lab-four-loko.jpg" muted loop playsinline preload="none"></video><span class="play">▶ PLAY</span></div><div class="meta"><h3>Bebida energética · Sabores</h3><p>Motion de producto con IA · 20 s</p></div></article>
+      <article class="work" data-cur="play"><div class="vis"><video class="vid hov" src="/lab-dos-cepas.mp4" poster="/lab-dos-cepas.jpg" muted loop playsinline preload="none"></video><span class="play">▶ PLAY</span></div><div class="meta"><h3>Vino blanco · Lanzamiento</h3><p>Comercial de producto con IA · 16 s</p></div></article>
     </div>
     <div class="stats">
       <div class="stat"><div class="num"><span class="cnt" data-to="7">7</span></div><p>servicios en un solo equipo</p></div>
@@ -504,7 +508,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
   <div class="wrap">
     <p class="eyebrow">Quiénes somos</p>
     <h2 style="margin-top:18px">Detrás de la máquina<br>hay personas.</h2>
-    <div class="founders"><figure class="founder"><div class="ph" style="border:0;overflow:hidden"><img src="/assets/team-1.webp" alt="Juan José Balcazar, co-founder de Red Machine" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><figcaption><b>Juan José Balcazar</b><span>Co-founder · Growth, Meta Ads &amp; E-commerce</span><small>[1 línea de experiencia, ej. "8 años filmando campañas para marcas de consumo"]</small></figcaption></figure><figure class="founder"><div class="ph" style="border:0;background:linear-gradient(160deg,#1a1a1f,#3a0a10);color:#fff;font-family:var(--f-disp);font-style:italic;font-weight:900;font-size:clamp(28px,5vw,56px);letter-spacing:0"><span style="color:#fff;font-family:var(--f-disp);font-size:clamp(32px,5vw,64px);letter-spacing:0;font-weight:900;font-style:italic">E</span></div><figcaption><b>Estefanía</b><span>Co-founder · Directora Creativa</span><small>[1 línea de experiencia, ej. "8 años filmando campañas para marcas de consumo"]</small></figcaption></figure><figure class="founder"><div class="ph" style="border:0;background:linear-gradient(160deg,#1a1a1f,#3a0a10);color:#fff;font-family:var(--f-disp);font-style:italic;font-weight:900;font-size:clamp(28px,5vw,56px);letter-spacing:0"><span style="color:#fff;font-family:var(--f-disp);font-size:clamp(32px,5vw,64px);letter-spacing:0;font-weight:900;font-style:italic">HF</span></div><figcaption><b>Huáscar Fernández</b><span>Co-founder · Operaciones y Finanzas</span><small>[1 línea de experiencia, ej. "8 años filmando campañas para marcas de consumo"]</small></figcaption></figure></div>
+    <div class="founders"><figure class="founder"><div class="ph" style="border:0;overflow:hidden"><img src="/team-1.webp" alt="Juan José Balcazar, co-founder de Red Machine" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><figcaption><b>Juan José Balcazar</b><span>Co-founder · Growth, Meta Ads &amp; E-commerce</span><small>[1 línea de experiencia, ej. "8 años filmando campañas para marcas de consumo"]</small></figcaption></figure><figure class="founder"><div class="ph" style="border:0;background:linear-gradient(160deg,#1a1a1f,#3a0a10);color:#fff;font-family:var(--f-disp);font-style:italic;font-weight:900;font-size:clamp(28px,5vw,56px);letter-spacing:0"><span style="color:#fff;font-family:var(--f-disp);font-size:clamp(32px,5vw,64px);letter-spacing:0;font-weight:900;font-style:italic">EE</span></div><figcaption><b>Estefanía Espinoza</b><span>Co-founder · Directora Creativa</span><small>[1 línea de experiencia, ej. "8 años filmando campañas para marcas de consumo"]</small></figcaption></figure><figure class="founder"><div class="ph" style="border:0;background:linear-gradient(160deg,#1a1a1f,#3a0a10);color:#fff;font-family:var(--f-disp);font-style:italic;font-weight:900;font-size:clamp(28px,5vw,56px);letter-spacing:0"><span style="color:#fff;font-family:var(--f-disp);font-size:clamp(32px,5vw,64px);letter-spacing:0;font-weight:900;font-style:italic">HF</span></div><figcaption><b>Huáscar Fernández</b><span>Co-founder · Operaciones y Finanzas</span><small>[1 línea de experiencia, ej. "8 años filmando campañas para marcas de consumo"]</small></figcaption></figure></div>
     <div class="testis team-cards">
       <div class="testi"><h3>Agenda limitada</h3><p style="color:var(--ink2)">Tomamos un número reducido de marcas por mes. Así cada proyecto tiene al equipo completo detrás.</p></div>
       <div class="testi"><h3>Trato directo</h3><p style="color:var(--ink2)">Hablás con quienes dirigen, filman y lanzan tus campañas. Sin intermediarios ni respuestas en tres días.</p></div>
